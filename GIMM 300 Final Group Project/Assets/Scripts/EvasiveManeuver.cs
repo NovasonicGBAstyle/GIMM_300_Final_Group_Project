@@ -22,7 +22,11 @@ public class EvasiveManeuver : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject find = GameObject.FindGameObjectWithTag("Player");
+        if(find != null)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         rb = GetComponent<Rigidbody>();
         currentSpeed = rb.velocity.z;
         StartCoroutine(Evade());

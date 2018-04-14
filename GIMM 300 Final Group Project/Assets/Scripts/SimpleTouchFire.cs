@@ -13,7 +13,6 @@ public class SimpleTouchFire : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     void Awake()
     {
-        Debug.Log("we are awake!");
         //Check to see if there is something inside the instance property.  If not, it is new.
         if (Instance == null)
         {
@@ -40,7 +39,6 @@ public class SimpleTouchFire : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             //Set our ability to fire.
             canFire = true;
         }
-        Debug.Log("touched!");
     }
 
     public void OnPointerUp(PointerEventData data)
@@ -50,7 +48,6 @@ public class SimpleTouchFire : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             touched = false;
             canFire = false;
         }
-        Debug.Log("untouched!");
     }
 
     public bool CanFire()
