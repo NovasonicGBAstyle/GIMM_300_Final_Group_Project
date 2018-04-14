@@ -9,6 +9,12 @@ public class SimpleTouchPad : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
     private Vector2 origin;
     public static Vector2 moveDirection;
+
+    public float smoothing;
+    private Vector2 smoothDirection;
+
+    private bool touched;
+    private int pointerId;
     
     void Awake()
     {
@@ -21,6 +27,7 @@ public class SimpleTouchPad : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             DontDestroyOnLoad(gameObject);
 
             moveDirection = Vector2.zero;
+            touched = false;
         }
         else
         {
@@ -29,32 +36,48 @@ public class SimpleTouchPad : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         }
     }
 
-    public void OnPointerDown (PointerEventData data)
+    public void OnPointerDown(PointerEventData data)
     {
-        //Set our start point.
-        origin = data.position;
+        if (!touched)
+        {
+            //Say that we were touched and track the touch.
+            touched = true;
+            pointerId = data.pointerId;
+
+            //Set our start point.
+            origin = data.position;
+        }
     }
 
     public void OnPointerUp(PointerEventData data)
     {
-        //Reset everyting.
-        moveDirection = Vector2.zero;
+        if (data.pointerId == pointerId)
+        {
+            touched = false;
+
+            //Reset everyting.
+            moveDirection = Vector2.zero;
+        }
     }
 
     public void OnDrag(PointerEventData data)
     {
-        //Compare the difference between our start point and our current pointer position
-        Vector2 currentPosition = data.position;
-        Vector2 directionRaw = currentPosition - origin;
+        if (data.pointerId == pointerId)
+        {
+            //Compare the difference between our start point and our current pointer position
+            Vector2 currentPosition = data.position;
+            Vector2 directionRaw = currentPosition - origin;
 
-        //Again, this will set the value to 1, but keep the direction.
-        moveDirection = directionRaw.normalized;
-        Debug.Log(moveDirection);
+            //Again, this will set the value to 1, but keep the direction.
+            moveDirection = directionRaw.normalized;
+            //Debug.Log(moveDirection);
+        }
     }
 
     public Vector2 GetDirection()
     {
-        Debug.Log(moveDirection);
-        return moveDirection;
+        // Debug.Log(moveDirection);
+        smoothDirection = Vector2.MoveTowards(smoothDirection, moveDirection, smoothing);
+        return smoothDirection;
     }
 }

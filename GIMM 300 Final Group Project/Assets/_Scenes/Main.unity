@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c488f62521f1e4ab7e107303a407cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothing: 0.1
 --- !u!114 &704724410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,7 +652,6 @@ MonoBehaviour:
   shot: {fileID: 1754133413834576, guid: edb8c39f1e08d6e4fac0c9c86b489ab0, type: 2}
   shotSpawn: {fileID: 375837705}
   fireRate: 0.25
-  touchPad: {fileID: 704724409}
 --- !u!4 &879835558 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
