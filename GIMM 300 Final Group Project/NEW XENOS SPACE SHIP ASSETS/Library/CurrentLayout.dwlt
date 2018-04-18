@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 33
+  controlID: 85
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_MinSize: {x: 204, y: 442}
   m_MaxSize: {x: 4004, y: 8042}
   vertical: 1
-  controlID: 34
+  controlID: 86
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -323,9 +323,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a0290000
-    m_LastClickedID: 10656
-    m_ExpandedIDs: 9cfaffff00000000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 2afbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -420,19 +420,21 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/XenoShips
+    - Assets/XenosMaterials
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Year 2\S2\Space Shooter Unity Game\NEW GAME ASSETS\NEW SPACE
-    SHIP ASSETS
+  m_LastProjectPath: D:\GitHub\GIMM_300_Final_Group_Project\GIMM 300 Final Group Project\NEW
+    XENOS SPACE SHIP ASSETS
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 90300000
     m_LastClickedID: 12432
-    m_ExpandedIDs: 0000000022290000
+    m_ExpandedIDs: 0000000058290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -460,7 +462,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000022290000
+    m_ExpandedIDs: 0000000058290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -620,14 +622,14 @@ MonoBehaviour:
     height: 493
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 451.09568794823656
+  lastFramingTime: 681.4986913739352
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -20.800308, y: -7.0509896, z: -7.7354164}
+    m_Target: {x: 0, y: 0, z: 11.1637335}
     speed: 2
-    m_Value: {x: -20.800308, y: -7.0509896, z: -7.7354164}
+    m_Value: {x: 0, y: 0, z: 11.1637335}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -651,13 +653,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.09280028, y: 0.8079119, z: -0.13229823, w: -0.56671304}
+    m_Target: {x: -0.4798371, y: 0.51910925, z: -0.47667828, w: -0.5225512}
     speed: 2
-    m_Value: {x: -0.09280028, y: 0.8079119, z: -0.13229823, w: -0.56671304}
+    m_Value: {x: -0.4798371, y: 0.51910925, z: -0.47667828, w: -0.5225512}
   m_Size:
-    m_Target: 36.020767
+    m_Target: 74.741
     speed: 2
-    m_Value: 36.020767
+    m_Value: 74.741
   m_Ortho:
     m_Target: 0
     speed: 2

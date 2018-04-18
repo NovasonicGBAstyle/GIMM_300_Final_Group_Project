@@ -70,7 +70,7 @@ public class SimpleTouchPad : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
             //Again, this will set the value to 1, but keep the direction.
             moveDirection = directionRaw.normalized;
-            //Debug.Log(moveDirection);
+            Debug.Log(moveDirection);
         }
     }
 
