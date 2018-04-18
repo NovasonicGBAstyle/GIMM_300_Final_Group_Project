@@ -12,12 +12,28 @@ public class PlayerController : MonoBehaviour {
     public float fireRate = 0.5f;
     private float nextFire = 0.0f;
 
+    private Quaternion calibrationQuaternion;
+
+    private void Start()
+    {
+        CalibrateAccelerometer();
+    }
+
     private void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //Old stuff for just computer.
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
+        //Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+        //This gets input from the accelerometer.
+        //Vector3 accelerationRaw = Input.acceleration;
+        //Vector3 acceleration = FixAcceleration(accelerationRaw);
+        //Vector3 movement = new Vector3(acceleration.x, 0.0f, acceleration.y);
+
+        Vector2 direction = SimpleTouchPad.Instance.GetDirection();
+        //Debug.Log(direction);
+        Vector3 movement = new Vector3(direction.x, 0.0f, direction.y);
 
         GetComponent<Rigidbody>().velocity = movement * speed;
 
@@ -32,12 +48,27 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if (SimpleTouchFire.Instance.CanFire() && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
             GetComponent<AudioSource>().Play();
         }
+    }
+
+    //Used toe calibrate the Input.acceleration input.
+    void CalibrateAccelerometer()
+    {
+        Vector3 accelerationSnapshot = Input.acceleration;
+        Quaternion rotateQuaternion = Quaternion.FromToRotation(new Vector3(0.0f, 0.0f, -1.0f), accelerationSnapshot);
+        calibrationQuaternion = Quaternion.Inverse(rotateQuaternion);
+    }
+
+    //Get the 'calibrated' value from the Input
+    Vector3 FixAcceleration(Vector3 acceleration)
+    {
+        Vector3 fixedAcceleration = calibrationQuaternion * acceleration;
+        return fixedAcceleration;
     }
 }
 

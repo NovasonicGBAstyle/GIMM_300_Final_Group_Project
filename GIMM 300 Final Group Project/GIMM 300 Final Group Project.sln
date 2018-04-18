@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMM 300 Final Group Project", "GIMM 300 Final Group Project.csproj", "{4A59B057-7560-AFF4-FF7D-25045F7F00C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIMM 300 Final Group Project.Editor", "GIMM 300 Final Group Project.Editor.csproj", "{FB779D03-3AF0-7D9F-5637-102E22E2B7A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A59B057-7560-AFF4-FF7D-25045F7F00C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A59B057-7560-AFF4-FF7D-25045F7F00C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A59B057-7560-AFF4-FF7D-25045F7F00C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A59B057-7560-AFF4-FF7D-25045F7F00C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB779D03-3AF0-7D9F-5637-102E22E2B7A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB779D03-3AF0-7D9F-5637-102E22E2B7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB779D03-3AF0-7D9F-5637-102E22E2B7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB779D03-3AF0-7D9F-5637-102E22E2B7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
