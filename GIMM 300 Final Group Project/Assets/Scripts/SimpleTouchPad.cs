@@ -24,7 +24,6 @@ public class SimpleTouchPad : MonoBehaviour, IPointerDownHandler, IDragHandler, 
         {
             //Set the Instance property to the current this actual instance is.
             Instance = this;
-            DontDestroyOnLoad(gameObject);
 
             moveDirection = Vector2.zero;
             touched = false;

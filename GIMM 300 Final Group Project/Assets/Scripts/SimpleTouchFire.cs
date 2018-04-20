@@ -18,7 +18,6 @@ public class SimpleTouchFire : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         {
             //Set the Instance property to the current this actual instance is.
             Instance = this;
-            DontDestroyOnLoad(gameObject);
             touched = false;
         }
         else
