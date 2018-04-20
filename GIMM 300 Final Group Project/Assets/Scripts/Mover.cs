@@ -10,6 +10,6 @@ public class Mover : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * speed;
-        Debug.Log("Velocity now:" + rb.velocity);
+        //Debug.Log("Velocity now:" + rb.velocity);
     }
 }
