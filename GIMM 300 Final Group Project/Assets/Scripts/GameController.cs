@@ -25,6 +25,12 @@ public class GameController : MonoBehaviour {
     private int waveSizeCounter = 0;
     private int spawnSpeedCounter = 0;
 
+    //Boss stuff.
+    public GameObject[] Bosses;
+    public int bossWaveCount;       //How many waves between boss spawns
+    private int waveCounter;        //How many waves we have had.
+    private bool bossWave;          //Whether this is a boss wave or not.
+
     private void Start()
     {
         gameOver = false;
@@ -35,6 +41,9 @@ public class GameController : MonoBehaviour {
 
         score = 0;
         updateScore();
+
+        bossWave = false;
+        waveCounter = 0;
         StartCoroutine (spawnWaves());
     }
 
@@ -67,13 +76,27 @@ public class GameController : MonoBehaviour {
 
         while (true)
         {
-            for (int i = 0; i < hazardCount; i++)
+            if(waveCounter >= bossWaveCount && !bossWave)
             {
-                GameObject hazard = hazards[Random.Range(0,hazards.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(hazard, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(spawnWait);
+                //We need to spawn a boss.
+                waveCounter = 0;
+                bossWave = true;
+                //Boss spawn.  We currently only have one, but I'll just build it so that we can have more.
+                GameObject boss = Bosses[Random.Range(0, Bosses.Length)];
+                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1, spawnValues.z);
+                Quaternion spawnRotation = Quaternion.Euler(0, 170, 0);
+                Instantiate(boss, spawnPosition, spawnRotation);
+            }
+            if (!bossWave)
+            {
+                for (int i = 0; i < hazardCount; i++)
+                {
+                    GameObject hazard = hazards[Random.Range(0, hazards.Length)];
+                    Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                    Quaternion spawnRotation = Quaternion.identity;
+                    Instantiate(hazard, spawnPosition, spawnRotation);
+                    yield return new WaitForSeconds(spawnWait);
+                }
             }
 
             //Check to see if we've reached the maximum wave size.
@@ -109,6 +132,7 @@ public class GameController : MonoBehaviour {
                 restart = true;
                 break;
             }
+            waveCounter++;
         }
     }
 

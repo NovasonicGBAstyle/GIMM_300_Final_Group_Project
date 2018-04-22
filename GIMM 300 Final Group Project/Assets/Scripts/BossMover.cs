@@ -23,7 +23,7 @@ public class BossMover : MonoBehaviour
     //Rate at which enemiles will be instantiated
     public float secondsBetweenEnemyDrops = 1f;
 
-    private float enemyDropOffset = 4f;
+    public float enemyDropOffset = 4f;
 
     
     // Use this for initialization
