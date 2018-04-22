@@ -76,64 +76,84 @@ public class GameController : MonoBehaviour {
 
         while (true)
         {
-            if(waveCounter >= bossWaveCount && !bossWave)
-            {
-                //We need to spawn a boss.
-                waveCounter = 0;
-                bossWave = true;
-                //Boss spawn.  We currently only have one, but I'll just build it so that we can have more.
-                GameObject boss = Bosses[Random.Range(0, Bosses.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.Euler(0, 170, 0);
-                Instantiate(boss, spawnPosition, spawnRotation);
-            }
+            Debug.Log("Boss waive check: " + bossWave);
+            Debug.Log("Wave counter: " + waveCounter);
             if (!bossWave)
             {
-                for (int i = 0; i < hazardCount; i++)
+                if (waveCounter >= bossWaveCount)
                 {
-                    GameObject hazard = hazards[Random.Range(0, hazards.Length)];
-                    Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                    Quaternion spawnRotation = Quaternion.identity;
-                    Instantiate(hazard, spawnPosition, spawnRotation);
+                    Debug.Log("we need to build a boss");
+                    //We need to spawn a boss.
+                    waveCounter = 0;
+                    bossWave = true;
+                    //Boss spawn.  We currently only have one, but I'll just build it so that we can have more.
+                    GameObject boss = Bosses[Random.Range(0, Bosses.Length)];
+                    Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), 1, spawnValues.z);
+                    Quaternion spawnRotation = Quaternion.Euler(0, 170, 0);
+                    Instantiate(boss, spawnPosition, spawnRotation);
                     yield return new WaitForSeconds(spawnWait);
                 }
-            }
-
-            //Check to see if we've reached the maximum wave size.
-            if (hazardCount <= 25)
-            {
-                //Go head and work on increasing the wave size.
-                waveSizeCounter++;
-                if (waveSizeCounter > 2)
+                else
                 {
-                    waveSizeCounter = 0;
-                    hazardCount++;
-                }
-            }
+                    Debug.Log("Not a boss wave.");
+                    for (int i = 0; i < hazardCount; i++)
+                    {
+                        GameObject hazard = hazards[Random.Range(0, hazards.Length)];
+                        Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
+                        Quaternion spawnRotation = Quaternion.identity;
+                        Instantiate(hazard, spawnPosition, spawnRotation);
+                        yield return new WaitForSeconds(spawnWait);
 
-            //Check to see if the spawn time is at the mininum yet.
-            if (spawnWait <= .03f)
-            {
-                //Go ahead and work on shortening the spawn time.
-                spawnSpeedCounter++;
-                if (spawnSpeedCounter > 3)
+                    }
+                    waveCounter++;
+                }
+
+                //Check to see if we've reached the maximum wave size.
+                if (hazardCount <= 25)
                 {
-                    spawnSpeedCounter = 0;
-                    spawnWait = spawnWait - 0.1f;
+                    //Go head and work on increasing the wave size.
+                    waveSizeCounter++;
+                    if (waveSizeCounter > 2)
+                    {
+                        waveSizeCounter = 0;
+                        hazardCount++;
+                    }
                 }
+
+                //Check to see if the spawn time is at the mininum yet.
+                if (spawnWait <= .03f)
+                {
+                    //Go ahead and work on shortening the spawn time.
+                    spawnSpeedCounter++;
+                    if (spawnSpeedCounter > 3)
+                    {
+                        spawnSpeedCounter = 0;
+                        spawnWait = spawnWait - 0.1f;
+                    }
+                }
+
+                yield return new WaitForSeconds(waveWait);
+            }
+            else
+            {
+                Debug.Log("This in the middle of a boss wave.  Here we go!");
+                yield return new WaitForSeconds(waveWait);
             }
 
-            yield return new WaitForSeconds(waveWait);
-
-            if(gameOver)
+            if (gameOver)
             {
                 //restartText.text = "Press 'R' for Restart";
                 restartButton.SetActive(true);
                 restart = true;
                 break;
             }
-            waveCounter++;
         }
+    }
+
+    public void killBoss()
+    {
+        Debug.Log("Boss killed");
+        bossWave = false;
     }
 
     public void GameOver()

@@ -11,6 +11,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1440246928040936}
   m_IsPrefabParent: 1
+--- !u!1 &1222594823118956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4592655761621336}
+  - component: {fileID: 65916434282931762}
+  - component: {fileID: 114327190016930548}
+  m_Layer: 0
+  m_Name: SecondCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1296899731523158
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,9 +72,10 @@ GameObject:
   - component: {fileID: 4857859283940826}
   - component: {fileID: 198709231153492530}
   - component: {fileID: 199010957554000292}
-  - component: {fileID: 136466069470276598}
   - component: {fileID: 54695840101104392}
   - component: {fileID: 114483167424176356}
+  - component: {fileID: 114799163453687204}
+  - component: {fileID: 65479341576775018}
   m_Layer: 0
   m_Name: XenosShip_03
   m_TagString: Enemy
@@ -245,6 +263,19 @@ Transform:
   m_Father: {fileID: 4857859283940826}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4592655761621336
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222594823118956}
+  m_LocalRotation: {x: 0, y: 0.25856608, z: 0, w: 0.9659936}
+  m_LocalPosition: {x: -2.13, y: 0, z: 1.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4857859283940826}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 29.97, z: 0}
 --- !u!4 &4669896843910934
 Transform:
   m_ObjectHideFlags: 1
@@ -278,7 +309,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440246928040936}
   m_LocalRotation: {x: 0, y: 0.9961947, z: 0, w: 0.08715588}
-  m_LocalPosition: {x: 0, y: 1, z: 15}
+  m_LocalPosition: {x: 0, y: 1, z: 7.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4493142439095444}
@@ -289,6 +320,7 @@ Transform:
   - {fileID: 4066213822866512}
   - {fileID: 4571423741110900}
   - {fileID: 4315500707063442}
+  - {fileID: 4592655761621336}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 170, z: 0}
@@ -635,6 +667,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65479341576775018
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440246928040936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.57, y: 2, z: 2.14}
+  m_Center: {x: 2.31, y: 0, z: 0.18}
+--- !u!65 &65916434282931762
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222594823118956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.71, y: 2, z: 1.47}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114327190016930548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222594823118956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c15d212001d1c4dba96dc7a3d821a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114483167424176356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -654,19 +721,22 @@ MonoBehaviour:
   bottomEdge: 7
   chanceToChangeDirections: 0.01
   secondsBetweenEnemyDrops: 2.5
---- !u!136 &136466069470276598
-CapsuleCollider:
+  enemyDropOffset: 3
+--- !u!114 &114799163453687204
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440246928040936}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 3.2
-  m_Height: 12.08
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: -5}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30acc8b3dbb3ae44787255147b34c70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 2}
+  playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
+  scoreValue: 100
+  hitPoints: 1
 --- !u!198 &198709231153492530
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -727,7 +797,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 857819686
+  randomSeed: 1894421261
   InitialModule:
     serializedVersion: 3
     enabled: 1
