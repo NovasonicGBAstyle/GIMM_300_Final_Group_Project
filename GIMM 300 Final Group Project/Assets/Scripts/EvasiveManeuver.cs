@@ -29,7 +29,7 @@ public class EvasiveManeuver : MonoBehaviour
         }
         rb = GetComponent<Rigidbody>();
         currentSpeed = rb.velocity.z;
-        Debug.Log("Current Speed:" + currentSpeed);
+        //Debug.Log("Current Speed:" + currentSpeed);
         StartCoroutine(Evade());
     }
 

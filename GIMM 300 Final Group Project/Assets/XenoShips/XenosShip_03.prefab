@@ -56,9 +56,11 @@ GameObject:
   - component: {fileID: 198709231153492530}
   - component: {fileID: 199010957554000292}
   - component: {fileID: 136466069470276598}
+  - component: {fileID: 54695840101104392}
+  - component: {fileID: 114483167424176356}
   m_Layer: 0
   m_Name: XenosShip_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,7 +278,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440246928040936}
   m_LocalRotation: {x: 0, y: 0.9961947, z: 0, w: 0.08715588}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4493142439095444}
@@ -618,6 +620,40 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1994315137896470}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54695840101104392
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440246928040936}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &114483167424176356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440246928040936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1e78f7a9590ce4eb50099b8f40327c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyShips:
+  - {fileID: 1337052032115198, guid: 76ab4b882a7589540ab57fc0673fee03, type: 2}
+  - {fileID: 1027928035940646, guid: a6e28c4b2b885b7488feb9a5ee779864, type: 2}
+  speed: 1
+  leftAndRightEdge: 2
+  bottomEdge: 7
+  chanceToChangeDirections: 0.01
+  secondsBetweenEnemyDrops: 2.5
 --- !u!136 &136466069470276598
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -625,7 +661,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440246928040936}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 3.2
   m_Height: 12.08
@@ -691,7 +727,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1409896114
+  randomSeed: 857819686
   InitialModule:
     serializedVersion: 3
     enabled: 1

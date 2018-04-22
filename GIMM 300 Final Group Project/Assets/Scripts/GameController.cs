@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour {
     private void updateScore()
     {
         scoreText.text = "Score " + score;
+        PlayerPrefs.SetInt("CurrentScore", score);
     }
 
     public void addScore(int newScore)

@@ -30,6 +30,7 @@ public class DestroyByContact : MonoBehaviour {
         {
             return;
         }
+
         //First, destroy what hit this.  Like a bolt.
         Destroy(other.gameObject);
 
