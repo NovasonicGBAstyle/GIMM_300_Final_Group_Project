@@ -349,7 +349,6 @@
     <Compile Include="Assets\Scripts\BackgroundScroller.cs" />
     <Compile Include="Assets\Scripts\BossDestroyByContact.cs" />
     <Compile Include="Assets\Scripts\BossMover.cs" />
-    <Compile Include="Assets\Scripts\BossSecondCollider.cs" />
     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
     <Compile Include="Assets\Scripts\DestroyByContact.cs" />
     <Compile Include="Assets\Scripts\DestroyByTime.cs" />

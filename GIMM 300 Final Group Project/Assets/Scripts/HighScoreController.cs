@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HighScoreController : MonoBehaviour {
 
-    public Text PlayerNameText;
+    public InputField PlayerNameText;
     public Text CurrentScoreText;
+    public Text ScoreText;
+    public GameObject saveButton;
+    public FirebaseDatabaseHandler databaseHandler;
 
 	// Use this for initialization
-	void Start () {
-        //Check to see if there is a saved player name.
-        if (PlayerPrefs.HasKey("PlayerName"))
-        {
-            //There is a player name, so populate the data with the player name.
-            PlayerNameText.text = PlayerPrefs.GetString("PlayerName");
-        }
+	void Awake ()
+    {
+        string playerName = "";
+        playerName = PlayerPrefs.GetString("PlayerName", "Nameless Hero");
+
+        //There is a player name, so populate the data with the player name.
+        PlayerNameText.text = playerName;
 
         //Check to see if there is a current score.
         if (!PlayerPrefs.HasKey("CurrentScore"))
@@ -29,10 +33,20 @@ public class HighScoreController : MonoBehaviour {
         //PlayerPrefs isn't the best but I don't care to try and fix it right now
         //to use anything better.
         CurrentScoreText.text = PlayerPrefs.GetInt("CurrentScore").ToString();
-	}
+
+        ScoreText.text = "Score " + PlayerPrefs.GetInt("CurrentScore").ToString();
+    }
 
     public void SavePlayerName()
     {
+        saveButton.SetActive(false);
         PlayerPrefs.SetString("PlayerName", PlayerNameText.text);
+        databaseHandler.AddScore();
+    }
+
+    public void RestartGame()
+    {
+        Debug.Log("Um...yeah?");
+        SceneManager.LoadScene("Main");
     }
 }

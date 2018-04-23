@@ -143,8 +143,11 @@ public class GameController : MonoBehaviour {
             if (gameOver)
             {
                 //restartText.text = "Press 'R' for Restart";
-                restartButton.SetActive(true);
+                //restartButton.SetActive(true);
                 restart = true;
+
+                //We're going to load the score screen now.
+                SceneManager.LoadScene("Scene_HighScores");
                 break;
             }
         }
@@ -166,4 +169,5 @@ public class GameController : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }
