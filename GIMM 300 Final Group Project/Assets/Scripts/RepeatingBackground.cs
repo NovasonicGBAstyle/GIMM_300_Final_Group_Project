@@ -14,7 +14,7 @@ public class RepeatingBackground : MonoBehaviour {
 	void Start () {
         //backgroundCollider = bg1.GetComponent<BoxCollider>();
         bgz = bg1.GetComponent<Renderer>().bounds.size.z;
-        Debug.Log("bgz:" + bgz);
+        //Debug.Log("bgz:" + bgz);
 
         //Get and store a reference to the Rigidbody2D attached to this GameObject.
         //Start the object moving.

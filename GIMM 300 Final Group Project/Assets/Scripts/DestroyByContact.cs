@@ -8,6 +8,7 @@ public class DestroyByContact : MonoBehaviour {
     public GameObject playerExplosion;
     public int scoreValue;
     private GameController gc;
+    private GameObject target;
 
     private void Start()
     {
@@ -25,13 +26,24 @@ public class DestroyByContact : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        target = other.gameObject;
+        if(other.transform.parent != null)
+        {
+            target = other.transform.parent.gameObject;
+        }
+        //GameObject target = other.transform.parent.gameObject;
+        //Debug.Log(other.name);
+        //Debug.Log(target.name);
+
         //So, we're going to check to see if we are hitting the bondary, or an enemy.
-        if(other.CompareTag("Boundary") || other.CompareTag("Enemy"))
+        if (target.CompareTag("Boundary") || target.CompareTag("Enemy"))
         {
             return;
         }
+
+        //Debug.Log(target.name);
         //First, destroy what hit this.  Like a bolt.
-        Destroy(other.gameObject);
+        Destroy(target.gameObject);
 
         //Now, destroy this asteroid
         Destroy(gameObject);
@@ -44,9 +56,9 @@ public class DestroyByContact : MonoBehaviour {
 
         gc.addScore(scoreValue);
 
-        if(other.tag == "Player")
+        if(target.tag == "Player")
         {
-            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+            Instantiate(playerExplosion, target.transform.position, target.transform.rotation);
             gc.GameOver();
         }
     }
