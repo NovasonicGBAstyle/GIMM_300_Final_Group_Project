@@ -41,7 +41,7 @@ public class DestroyByContact : MonoBehaviour {
             return;
         }
 
-        Debug.Log(target.name);
+        //Debug.Log(target.name);
         //First, destroy what hit this.  Like a bolt.
         Destroy(target.gameObject);
 

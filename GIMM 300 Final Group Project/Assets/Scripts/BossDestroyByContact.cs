@@ -8,6 +8,8 @@ public class BossDestroyByContact : MonoBehaviour{
     public GameObject playerExplosion;
     public int scoreValue;
     public int hitPoints = 5;
+    public float hitTimer = 2f;
+    private float lastHitTime = 0f;
     private GameController gc;
 
     // Use this for initialization
@@ -35,28 +37,9 @@ public class BossDestroyByContact : MonoBehaviour{
             return;
         }
 
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         //First, destroy what hit this.  Like a bolt.
         Destroy(other.gameObject);
-
-        //Next, determine if this has been destroyed.
-        hitPoints--;
-
-        if(hitPoints <= 0)
-        {
-
-            //Now, destroy this boss
-            Destroy(gameObject);
-
-            gc.killBoss();
-            gc.addScore(scoreValue);
-            
-            //Only do the explosion if we have one.
-            if (explosion != null)
-            {
-                Instantiate(explosion, transform.position, transform.rotation);
-            }
-        }
 
         if (other.tag == "Player")
         {
@@ -64,5 +47,43 @@ public class BossDestroyByContact : MonoBehaviour{
             gc.GameOver();
         }
 
+        takeHit(other);
+    }
+
+    /// <summary>
+    /// This function is going to check and see if the boss can take damage.  It will be 
+    /// speficially to make it seem harder to kill.
+    /// </summary>
+    /// <param name="other">Collider of thing that was hit.</param>
+    private void takeHit(Collider other)
+    {
+
+        //First, see if this is within the time frame of the last shot so that we don't do damage.
+        if (Time.time - lastHitTime < hitTimer) return;
+
+        //Debug.Log("We are now hitting this boss!");
+        //Debug.Log("BOSS HP:" + hitPoints.ToString());
+
+        //Set last timer for next check.
+        lastHitTime = Time.time;
+
+        //Next, determine if this has been destroyed.
+        hitPoints--;
+
+        if (hitPoints <= 0)
+        {
+
+            //Now, destroy this boss
+            Destroy(gameObject);
+
+            gc.killBoss();
+            gc.addScore(scoreValue);
+
+            //Only do the explosion if we have one.
+            if (explosion != null)
+            {
+                Instantiate(explosion, transform.position, transform.rotation);
+            }
+        }
     }
 }

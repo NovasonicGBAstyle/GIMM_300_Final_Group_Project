@@ -76,13 +76,13 @@ public class GameController : MonoBehaviour {
 
         while (true)
         {
-            Debug.Log("Boss waive check: " + bossWave);
-            Debug.Log("Wave counter: " + waveCounter);
+            //Debug.Log("Boss waive check: " + bossWave);
+            //Debug.Log("Wave counter: " + waveCounter);
             if (!bossWave)
             {
                 if (waveCounter >= bossWaveCount)
                 {
-                    Debug.Log("we need to build a boss");
+                    //Debug.Log("we need to build a boss");
                     //We need to spawn a boss.
                     waveCounter = 0;
                     bossWave = true;
@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour {
                 }
                 else
                 {
-                    Debug.Log("Not a boss wave.");
+                    //Debug.Log("Not a boss wave.");
                     for (int i = 0; i < hazardCount; i++)
                     {
                         GameObject hazard = hazards[Random.Range(0, hazards.Length)];
@@ -136,7 +136,7 @@ public class GameController : MonoBehaviour {
             }
             else
             {
-                Debug.Log("This in the middle of a boss wave.  Here we go!");
+                //Debug.Log("This in the middle of a boss wave.  Here we go!");
                 yield return new WaitForSeconds(waveWait);
             }
 
@@ -155,7 +155,7 @@ public class GameController : MonoBehaviour {
 
     public void killBoss()
     {
-        Debug.Log("Boss killed");
+        //Debug.Log("Boss killed");
         bossWave = false;
     }
 

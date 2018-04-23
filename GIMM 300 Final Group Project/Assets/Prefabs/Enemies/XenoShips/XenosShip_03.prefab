@@ -736,7 +736,8 @@ MonoBehaviour:
   explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 2}
   playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
   scoreValue: 100
-  hitPoints: 1
+  hitPoints: 10
+  hitTimer: 2
 --- !u!198 &198709231153492530
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -797,7 +798,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1894421261
+  randomSeed: 1056190263
   InitialModule:
     serializedVersion: 3
     enabled: 1

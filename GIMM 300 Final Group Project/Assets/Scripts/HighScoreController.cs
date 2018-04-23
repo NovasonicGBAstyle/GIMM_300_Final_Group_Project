@@ -40,13 +40,13 @@ public class HighScoreController : MonoBehaviour {
     public void SavePlayerName()
     {
         saveButton.SetActive(false);
+        PlayerNameText.gameObject.SetActive(false);
         PlayerPrefs.SetString("PlayerName", PlayerNameText.text);
         databaseHandler.AddScore();
     }
 
     public void RestartGame()
     {
-        Debug.Log("Um...yeah?");
         SceneManager.LoadScene("Main");
     }
 }
