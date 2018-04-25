@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4592655761621336}
   - component: {fileID: 65916434282931762}
-  - component: {fileID: 114327190016930548}
   m_Layer: 0
   m_Name: SecondCollider
   m_TagString: Untagged
@@ -691,17 +690,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.71, y: 2, z: 1.47}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114327190016930548
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1222594823118956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24c15d212001d1c4dba96dc7a3d821a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114483167424176356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -805,7 +793,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 1.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4114,7 +4102,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a7b030cffa2dc44478c14e49a22771c2, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
