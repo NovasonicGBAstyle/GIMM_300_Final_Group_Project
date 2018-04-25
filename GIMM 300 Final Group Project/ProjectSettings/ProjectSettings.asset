@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: GIMM300Group
-  productName: GIMM 300 Final Group Project
+  productName: Dark Millenium
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -261,7 +261,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 21739be35db06436cb65550d7b1c1db7, type: 3}
+      m_Icon: {fileID: 2800000, guid: 8dda29b375d513b449def0c6cfc3dbcc, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
