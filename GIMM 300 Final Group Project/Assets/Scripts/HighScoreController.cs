@@ -11,12 +11,14 @@ public class HighScoreController : MonoBehaviour {
     public Text ScoreText;
     public GameObject saveButton;
     public GameObject backToMainButton;
+    public GameObject restartButton;
     public FirebaseDatabaseHandler databaseHandler;
 
 	// Use this for initialization
 	void Awake ()
     {
         backToMainButton.SetActive(false);
+        restartButton.SetActive(false);
         string playerName = "";
         playerName = PlayerPrefs.GetString("PlayerName", "Nameless Hero");
 
@@ -44,6 +46,7 @@ public class HighScoreController : MonoBehaviour {
         saveButton.SetActive(false);
         PlayerNameText.gameObject.SetActive(false);
         backToMainButton.SetActive(true);
+        restartButton.SetActive(true);
         PlayerPrefs.SetString("PlayerName", PlayerNameText.text);
         databaseHandler.AddScore();
     }
@@ -55,6 +58,7 @@ public class HighScoreController : MonoBehaviour {
 
     public void BackToMain()
     {
-        //SceneManager.LoadScene("Scene_Title");
+        Debug.Log("Back to main");
+        SceneManager.LoadScene("Start Menu");
     }
 }
