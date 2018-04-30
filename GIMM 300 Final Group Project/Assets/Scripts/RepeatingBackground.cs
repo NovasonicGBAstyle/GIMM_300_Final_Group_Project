@@ -10,35 +10,35 @@ public class RepeatingBackground : MonoBehaviour {
     public GameObject bg2;
     public float scrollSpeed = 1f;
 
-	// Use this for initialization
-	void Start () {
+    private Vector3 startPosition1;
+    private Vector3 startPosition2;
+
+    // Use this for initialization
+    void Start () {
         //backgroundCollider = bg1.GetComponent<BoxCollider>();
         bgz = bg1.GetComponent<Renderer>().bounds.size.z;
         //Debug.Log("bgz:" + bgz);
 
-        //Get and store a reference to the Rigidbody2D attached to this GameObject.
-        //Start the object moving.
-        bg1.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, scrollSpeed*-1);
-        bg2.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, scrollSpeed*-1);
+        startPosition1 = bg1.transform.position;
+        startPosition2 = bg2.transform.position;
     }
 	
-	// Update is called once per frame
-	void Update ()
+	// I really tried to get rid of that gap. It just wasn't happening man.
+	void FixedUpdate ()
     {
-        if (bg1.transform.position.z < -bgz)
-        {
-            RepositionBackground(bg1);
-        }
-        if (bg2.transform.position.z < -bgz)
-        {
-            RepositionBackground(bg2);
-        }
-    }
 
-    private void RepositionBackground(GameObject go)
-    {
-        Vector3 backgroundOffset = new Vector3(0, -10, bgz);
-        go.transform.position = backgroundOffset;
+        float newPosition1 = Mathf.Repeat(Time.time * scrollSpeed, bgz*2);
+        float newPosition2 = newPosition1;
+        if(newPosition1 <= bgz)
+        {
+            newPosition2 = newPosition1 + bgz;
+        }
+        else
+        {
+            newPosition2 = newPosition1 - bgz;
+        }
 
+        bg1.transform.position = startPosition1+Vector3.forward * (newPosition1 * -1 + bgz);
+        bg2.transform.position = startPosition2+Vector3.forward * (newPosition2 * -1 + bgz);
     }
 }

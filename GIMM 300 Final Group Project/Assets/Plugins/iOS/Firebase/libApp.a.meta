@@ -4,12 +4,17 @@ labels:
 - gvh
 - gvh_version-4.5.1
 PluginImporter:
+<<<<<<< HEAD
+=======
+  externalObjects: {}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   serializedVersion: 2
   iconMap: {}
   executionOrder: {}
   isPreloaded: 0
   isOverridable: 0
   platformData:
+<<<<<<< HEAD
     data:
       first:
         Any: 
@@ -29,6 +34,24 @@ PluginImporter:
       second:
         enabled: 1
         settings: {}
+=======
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+  - first:
+      iPhone: iOS
+    second:
+      enabled: 1
+      settings: {}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   userData: 
   assetBundleName: 
   assetBundleVariant: 

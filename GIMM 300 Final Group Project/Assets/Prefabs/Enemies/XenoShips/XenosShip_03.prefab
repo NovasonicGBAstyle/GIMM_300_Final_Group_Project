@@ -721,9 +721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30acc8b3dbb3ae44787255147b34c70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100012, guid: 384371afbb4354cc9a3fc68eab303756, type: 2}
+  explosion: {fileID: 100012, guid: 7eb55687610cbac40ad2ed3eae7352da, type: 2}
   playerExplosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
-  scoreValue: 100
+  scoreValue: 250
   hitPoints: 10
   hitTimer: 2
 --- !u!198 &198709231153492530

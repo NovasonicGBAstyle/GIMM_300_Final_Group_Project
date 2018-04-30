@@ -20,7 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4290700108614714}
   - component: {fileID: 33672376082772434}
+<<<<<<< HEAD
   - component: {fileID: 136075127490294110}
+=======
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   - component: {fileID: 23225760112387324}
   m_Layer: 0
   m_Name: turd cabin
@@ -106,7 +109,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4960005661250704}
   - component: {fileID: 33775889673898906}
+<<<<<<< HEAD
   - component: {fileID: 136979326460621928}
+=======
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   - component: {fileID: 23230063664970096}
   m_Layer: 0
   m_Name: wings
@@ -164,9 +170,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1321871868254072}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.9999357, y: 0, z: 0, w: 0.011344416}
   m_LocalPosition: {x: -1.045, y: 4.47, z: 2.665}
   m_LocalScale: {x: 0.91, y: 0.93, z: 0.99}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   m_Children:
   - {fileID: 4290700108614714}
   - {fileID: 4960005661250704}
@@ -174,7 +186,11 @@ Transform:
   - {fileID: 4705511857643958}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 178.7, y: 0, z: 0}
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
 --- !u!4 &4290700108614714
 Transform:
   m_ObjectHideFlags: 1
@@ -182,7 +198,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300729372224762}
   m_LocalRotation: {x: 0.52816796, y: 0.4615144, z: 0.46944794, w: 0.5363411}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.03938505, y: 2.4458094, z: 0.7431704}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0.7431704}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4073592395982220}
@@ -194,9 +214,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304968382008464}
+<<<<<<< HEAD
   m_LocalRotation: {x: -0.999501, y: -0.024611378, z: 0.01650213, w: 0.010943007}
   m_LocalPosition: {x: 1.0322595, y: 4.7778215, z: 3.514975}
   m_LocalScale: {x: 1.0987496, y: 1.0752918, z: 1.0102298}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   m_Children:
   - {fileID: 4019966998394882}
   - {fileID: 4051314857740606}
@@ -209,9 +235,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336251468695454}
+<<<<<<< HEAD
   m_LocalRotation: {x: -0.999501, y: -0.024611378, z: 0.01650213, w: 0.010943007}
   m_LocalPosition: {x: 0.9677856, y: 4.8174562, z: 1.7486844}
   m_LocalScale: {x: 1.0987496, y: 1.0752918, z: 1.0102298}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   m_Children: []
   m_Father: {fileID: 4073592395982220}
   m_RootOrder: 3
@@ -223,7 +255,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754727795047448}
   m_LocalRotation: {x: -0.029887095, y: 0.02907066, z: 0.74710697, w: 0.663395}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.031, y: 2.364, z: 0.74}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0.75}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   m_LocalScale: {x: 0.03, y: 0.8, z: -0.72}
   m_Children: []
   m_Father: {fileID: 4073592395982220}
@@ -243,7 +279,12 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+<<<<<<< HEAD
   - {fileID: 0}
+=======
+  - {fileID: 2100000, guid: 3c60cff034a444b489960f160c677efb, type: 2}
+  - {fileID: 2100000, guid: 6222dccd49dd72443b74ecdf7509d984, type: 2}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -486,6 +527,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.81
+<<<<<<< HEAD
   m_Center: {x: -0.02, y: 2.28, z: 0.73}
 --- !u!136 &136075127490294110
 CapsuleCollider:
@@ -513,6 +555,9 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+=======
+  m_Center: {x: -0.02, y: 0, z: 0.73}
+>>>>>>> e9a41591e082128f48564efd91b05a455b45d603
 --- !u!198 &198187776901543046
 ParticleSystem:
   m_ObjectHideFlags: 1
